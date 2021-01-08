@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Gets all members:
 app.get('/api/members', (req, res) => {
-    res.json(members.join());
+    res.json(members);
 });
 
 //
