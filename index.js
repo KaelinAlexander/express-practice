@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const logger = require('./middleware/logger');
 const exphbs = require('express-handlebars')
+const members = require('./Members')
 
 const PORT = process.env.PORT || 3001;
 
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Homepage Route
 
-app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => res.render('index', {title: 'Members App', members }));
 
 // // Set static folder:
 // app.use(express.static(path.join(__dirname, 'public')));
